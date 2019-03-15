@@ -1,17 +1,16 @@
 <?php
 
 /*
-変数：データにつけるラベル。
-
-データ型：
-- 文字列 string
-- 数値 integer float
-- 論理値 boolean / true false
-- オブジェクト
-- null
+定数：プログラム上で変更されない値につけるラベル
 
 */
 
-$msg = "hello from the TOP!";
-echo $msg;
-var_dump($msg);
+define("MY_EMAIL", "taguchi@dotinstall.com");
+
+echo MY_EMAIL;
+
+// MY_EMAIL = "hogehoge";
+
+var_dump(__LINE__);
+var_dump(__FILE__);
+var_dump(__DIR__);
