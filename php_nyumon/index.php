@@ -1,34 +1,26 @@
 <?php
 
-//    #12 for文でループ処理をしてみよう
-
-// while
-// do ... while
-// for
-
-// break        :ループを抜ける
-// continue     :それ以降の処理を実行せずに次のループに移る
+//  #13 配列を使ってみよう
+//  key value
 
 
-// $i = 100;
-
-// while ($i < 10) {
-//     echo ($i);
-//     $i++;
-// } 
-
-
-// do {
-//     echo $i;
-//     // $i = $i++;
-//     $i++;
-// } while ($i < 7);
+// $sales = array(
+//     "taguchi"       => 200,
+//     "fkoji"         => 800,
+//     "dotinstall"    => 600,
+// );
 
 
-for ($i = 0; $i < 10; $i++) {
-    if ($i == 5) {
-        // break;
-        continue;
-    }
-    echo $i;
-}
+// PHP 5.4以降
+$sales = [
+    "taguchi"       => 200,
+    "fkoji"         => 800,
+    "dotinstall"    => 600,
+];
+
+var_dump($sales["fkoji"]);      //800
+$sales["fkoji"] = 900;
+var_dump($sales["fkoji"]);      //900
+
+$colors = ["red", "blue", "pink"];
+var_dump($colors[1]);           //blue
