@@ -1,23 +1,20 @@
 <?php
 
-//   #10 switch文で条件分岐をしてみよう
+//   #11 while文でループ処理をしてみよう
 
-//switch 条件分岐
+// while
+// do ... while
 
-$signal = "yellow";
+$i = 100;
 
-switch ($signal){
-    case "red":
-        echo "stop";
-        break;
-    case "blue":
-    case "green":
-        echo "go!";
-        break;
-    case "yellow":
-        echo "caution!";
-        break;
-    default:
-        echo "wrong signal";
-        break;
-}
+// while ($i < 10) {
+//     echo ($i);
+//     $i++;
+// } 
+
+
+do {
+    echo $i;
+    // $i = $i++;
+    $i++;
+} while ($i < 7);
