@@ -1,15 +1,30 @@
 <?php
 
-//  #08 if文で条件分岐をしてみよう
-// if 条件分岐
-// 比較演算子　> < >= <= == === != !== 
-// 論理演算子 and && , or || , not !
+//   #09 真偽値について理解しよう
 
-$score = 35;
-if ($score > 80) {
+//真偽値
+/*
+# falseになる場合
+文字列　    空、　"0"
+数値　      0, 0.0
+論理値      false
+配列　      要素の数が0
+null
+
+*/
+
+
+$x = 5;
+// if ($x) {
+if ($x == true) {
     echo "great!";
-} elseif ($score >60) {
-    echo "good!";
+}
+
+// 三項演算子
+$max = ($a > $b) ? $a : $b;
+
+if ($a > $b){
+    $max = $a;
 } else {
-    echo "so so ...";
+    $max = $b;
 }
