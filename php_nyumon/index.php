@@ -1,7 +1,8 @@
 <?php
 
-//  #13 配列を使ってみよう
-//  key value
+// #14 foreachを使ってみよう
+// key value
+// for each
 
 
 // $sales = array(
@@ -18,9 +19,28 @@ $sales = [
     "dotinstall"    => 600,
 ];
 
-var_dump($sales["fkoji"]);      //800
-$sales["fkoji"] = 900;
-var_dump($sales["fkoji"]);      //900
+// foreach ($sales as $key => $value){
+//     echo "($key) $value";
+// }
 
 $colors = ["red", "blue", "pink"];
-var_dump($colors[1]);           //blue
+
+// foreach ($colors as $value){
+//     echo "$value ";
+// }
+
+
+//foreach if while for コロン構文
+foreach ($colors as $value) :
+    echo "$value ";
+endforeach;
+
+?>
+
+<ul>
+    <?php foreach ($colors as $value): ?>
+    <li>
+        <?php echo "$value"; ?>
+    </li>
+    <?php endforeach; ?>
+</ul>
