@@ -1,21 +1,12 @@
 <?php
 
-// #25 外部ファイルを読み込んでみよう
+// #26 名前空間を使ってみよう
 
-// require      : fatal error
-// require_once : すでに読み込まれていたらスキップ
-// require "User.class.php";
+require "User.class.php";
 
-// include      : warning
-// include_once : すでに読み込まれていたらスキップ
-// include "User.class.php";
-
-// autoload     :
-spl_autoload_register(function($class){
-    require $class . ".class.php";
-});
+// use Dotinstall\Lib as Lib;
+use Dotinstall\Lib;
 
 
-
-$Bob = new User("Bob");
+$Bob = new Lib\User("Bob");
 $Bob->sayHi();
