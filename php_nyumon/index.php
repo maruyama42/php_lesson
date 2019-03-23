@@ -1,23 +1,21 @@
 <?php
 
-//  #24 インターフェースを使ってみよう
+// #25 外部ファイルを読み込んでみよう
 
-interface sayHi {
-    public function sayHi();
-}
+// require      : fatal error
+// require_once : すでに読み込まれていたらスキップ
+// require "User.class.php";
 
-interface sayHello {
-    public function sayHello();
-}
+// include      : warning
+// include_once : すでに読み込まれていたらスキップ
+// include "User.class.php";
 
-class User implements sayHi, sayHello {
-    public function sayHi(){
-        echo "Hi";
-    }
-    public function sayHello(){
-        echo "hello";
-    }
-}
+// autoload     :
+spl_autoload_register(function($class){
+    require $class . ".class.php";
+});
 
-$tom = new User("tom");
-echo $tom->sayHello();
+
+
+$Bob = new User("Bob");
+$Bob->sayHi();
