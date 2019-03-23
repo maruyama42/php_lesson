@@ -1,14 +1,23 @@
 <?php
 
-//  #23 抽象クラスを使ってみよう
+//  #24 インターフェースを使ってみよう
 
-abstract class BaseUser {
-    public $name;
-    abstract public function sayHi();
+interface sayHi {
+    public function sayHi();
 }
 
-class User extends BaseUser {
+interface sayHello {
+    public function sayHello();
+}
+
+class User implements sayHi, sayHello {
     public function sayHi(){
-        echo "hello from User";
+        echo "Hi";
+    }
+    public function sayHello(){
+        echo "hello";
     }
 }
+
+$tom = new User("tom");
+echo $tom->sayHello();
