@@ -1,8 +1,13 @@
-<!--#29 Cookieを使ってみよう-->
+<!--#30 セッションを使ってみよう-->
+
 <?php
 
-// setcookie("username", "taguchi", time()*60*60);
-setcookie("username", "taguchi", time()-60*60);
+session_start();
 
-echo $_COOKIE['username'];
+// $_SESSION['username'] = "taguchi";
 
+// echo $_SESSION['username'];
+
+unset($_SESSION['username']);
+
+echo $_SESSION['username'];
