@@ -1,6 +1,6 @@
 <?php
 
-// #21 アクセス権について理解しよう
+// #22 staticキーワードを使ってみよう
 
 // private  :そのクラス内からのみアクセス可能
 // protected:そのクラス＋親子クラス内からのアクセスのみ可能
@@ -9,30 +9,30 @@
 
 // User クラス
 class User {
-    // property
-    // public $name;
-    // private $name;
-    protected $name;
-    
+    public $name;
+    public static $count = 0;
+
     // constructor
     public function __construct($name){
         $this->name = $name;
+        self::$count++;
     }
     
     // method
     public function sayHi() {
         echo "hi, i am $this->name";
     }
-}
-
-class AdminUser extends User {
-    // method
-    public function sayHello(){
-        echo "hello form $this->name";
+    
+    // static
+    public static function getMessage() {
+        echo "hello from User class!";
     }
 }
 
+// User::getMessage();
+// $tom = new User("Tom");
+
 $tom = new User("Tom");
-// echo $tom->name;
-$steve = new AdminUser("Steve");
-$steve->sayHello();
+$Bob = new User("Bob");
+
+echo User::$count;
