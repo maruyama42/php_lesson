@@ -1,27 +1,8 @@
-<!--#28 フォームからのデータを処理しよう-->
+<!--#29 Cookieを使ってみよう-->
 <?php
 
-$username = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $username = $_POST['username'];
-  $err = false;
-  if (strlen($username) > 8) {
-    $err = true;
-  }
-}
+// setcookie("username", "taguchi", time()*60*60);
+setcookie("username", "taguchi", time()-60*60);
 
-?>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>Check username</title>
-</head>
-<body>
-  <form action="" method="POST">
-    <input type="text" name="username" placeholder="user name" value="<?php echo htmlspecialchars($username, ENT_QUOTES, 'UTF-8'); ?>">
-    <input type="submit" value="Check!">
-    <?php if ($err) { echo "Too long!"; } ?>
-  </form>
-</body>
-</html>
+echo $_COOKIE['username'];
+
