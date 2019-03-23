@@ -1,6 +1,8 @@
 <?php
 
-// #19 クラスを作ってみよう
+// #20 クラスを継承してみよう
+
+// 継承
 
 // User クラス
 class User {
@@ -13,14 +15,29 @@ class User {
     }
     
     // method
-    public function sayHi() {
+    // public function sayHi() {
+    final public function sayHi() {
         echo "hi, i am $this->name";
     }
 }
 
+class AdminUser extends User {
+    // method
+    public function sayHello(){
+        echo "hello form Admin";
+    }
+    
+    // override
+    public function sayHi() {
+        echo "[admin] hi, i am $this->name";
+    }
+}
+
 $tom = new User("Tom");
-$bob = new User("Bob");
+$steve = new AdminUser("Steve");
 
-echo $tom->name;
-$bob->sayHi();
+// echo $steve->name;
 
+$tom->sayHi();
+$steve->sayHi();
+// $steve->sayHello();
