@@ -1,13 +1,18 @@
 <?php
 
-// #20 クラスを継承してみよう
+// #21 アクセス権について理解しよう
 
-// 継承
+// private  :そのクラス内からのみアクセス可能
+// protected:そのクラス＋親子クラス内からのアクセスのみ可能
+// public   :どこからでもアクセス可能
+
 
 // User クラス
 class User {
     // property
-    public $name;
+    // public $name;
+    // private $name;
+    protected $name;
     
     // constructor
     public function __construct($name){
@@ -15,8 +20,7 @@ class User {
     }
     
     // method
-    // public function sayHi() {
-    final public function sayHi() {
+    public function sayHi() {
         echo "hi, i am $this->name";
     }
 }
@@ -24,20 +28,11 @@ class User {
 class AdminUser extends User {
     // method
     public function sayHello(){
-        echo "hello form Admin";
-    }
-    
-    // override
-    public function sayHi() {
-        echo "[admin] hi, i am $this->name";
+        echo "hello form $this->name";
     }
 }
 
 $tom = new User("Tom");
+// echo $tom->name;
 $steve = new AdminUser("Steve");
-
-// echo $steve->name;
-
-$tom->sayHi();
-$steve->sayHi();
-// $steve->sayHello();
+$steve->sayHello();
